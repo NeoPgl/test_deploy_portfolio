@@ -1,3 +1,40 @@
+/* Animation d'entrée (bas vers haut) */
+@keyframes fadeInUp {
+  from {
+      opacity: 0;
+      transform: translateY(30px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+
+/* Animation de sortie (disparition progressive) */
+@keyframes fadeOut {
+  from {
+      opacity: 1;
+  }
+  to {
+      opacity: 0;
+  }
+}
+
+/* Classe pour cacher le contenu progressivement */
+.fade-out {
+  animation: fadeOut 0.5s forwards;
+}
+
+/* Classe pour afficher le contenu avec effet "bas vers haut" */
+.fade-in-up {
+  animation: fadeInUp 0.5s ease-out;
+}
+
+
+
+
+
 body {
   margin: 0;
   padding: 0;
@@ -40,16 +77,24 @@ body {
 
 
 
+
 /* Style de la navbar */
-.navbar {
+.header {
   display: flex;
   margin: 0 0 10rem 0;
-  padding: 2rem;
-  justify-content: space-between;
+  padding: 1rem;
   align-items: center;
   border-bottom: solid 1px;
   color: #fff;
-  top: 0;
+}
+
+.navbar {
+  display: flex;
+  width: 65%;
+  margin: 0 20%;
+  padding: 2rem;
+  justify-content: space-between;
+  align-items: center;
 }
 
 /* Logo à gauche */
@@ -157,10 +202,4 @@ body {
   text-align: center;
   margin: 0 auto;
 }
-
-
-
-
-
-
 

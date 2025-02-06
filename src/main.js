@@ -4,47 +4,60 @@ import javascriptLogo from './javascript.svg'
 import viteLogo from '/vite.svg'
 import { setupCounter } from './counter.js'
 
-AOS.init();
+document.addEventListener('DOMContentLoaded', () => {
+    const navLinks = document.querySelectorAll('.nav-links a');
+    const contentContainer = document.getElementById('content-all') || document.querySelector('.content-all');
 
+    // Fonction pour charger le contenu et appliquer l'animation
+    async function loadPageContent(url) {
+        try {
+            const response = await fetch(url);
+            const htmlText = await response.text();
+            
+            // Créer un élément temporaire pour extraire le contenu
+            const tempDiv = document.createElement('div');
+            tempDiv.innerHTML = htmlText;
+            
+            // Extraire la nouvelle section de contenu
+            const newContent = tempDiv.querySelector('#content-all') || tempDiv.querySelector('.content-all');
+            
+            if (newContent) {
+                // Réinitialiser le container avant de l'injecter à nouveau
+                contentContainer.style.opacity = "0";  // Masquer le contenu
+                contentContainer.style.animation = "none";  // Supprimer l'animation existante
+                contentContainer.innerHTML = '';  // Vider le contenu actuel
 
-document.addEventListener("DOMContentLoaded", function () {
-    console.log("Script chargé !");
+                // Forcer un reflow pour réinitialiser l'animation
+                void contentContainer.offsetWidth;
 
-    const links = document.querySelectorAll(".navbar a"); // Sélectionne les liens de la navbar
-    const contentDiv = document.getElementById("content-all");
+                // Ajouter le nouveau contenu
+                contentContainer.innerHTML = newContent.innerHTML;
 
-    if (!links.length || !contentDiv) {
-        console.error("Les éléments de navigation ou le contenu ne sont pas trouvés !");
-        return;
+                // Réinitialiser l'animation et appliquer la nouvelle animation
+                contentContainer.style.animation = "fadeInUp 0.8s ease-out";
+                contentContainer.style.opacity = "1";
+            }
+        } catch (error) {
+            console.error('Erreur lors du chargement du contenu :', error);
+        }
     }
 
-    links.forEach((link) => {
-        link.addEventListener("click", function (event) {
-            event.preventDefault(); // Empêche le rechargement
-
-            const page = this.getAttribute("href");
-
-            fetch(page)
-                .then((response) => {
-                    if (!response.ok) throw new Error("Erreur de chargement");
-                    return response.text();
-                })
-                .then((html) => {
-                    const parser = new DOMParser();
-                    const doc = parser.parseFromString(html, "text/html");
-                    const newContent = doc.getElementById("content");
-
-                    if (!newContent) throw new Error("Pas d'élément #content trouvé !");
-                    
-                    contentDiv.innerHTML = newContent.innerHTML; // Remplace le contenu
-                    history.pushState(null, "", page); // Change l'URL
-                })
-                .catch((error) => console.error("Erreur :", error));
+    // Gérer les clics sur la navigation
+    navLinks.forEach(link => {
+        link.addEventListener('click', async (e) => {
+            e.preventDefault();
+            const url = link.getAttribute('href');
+            
+            // Modifier l'URL sans recharger la page
+            history.pushState(null, '', url);
+            
+            // Charger le contenu de la page avec animation
+            await loadPageContent(url);
         });
     });
 
-    // Gérer le retour avec les boutons "Précédent" et "Suivant"
-    window.addEventListener("popstate", () => {
-        location.reload();
+    // Gérer le bouton retour du navigateur
+    window.addEventListener('popstate', () => {
+        loadPageContent(window.location.pathname);
     });
 });
