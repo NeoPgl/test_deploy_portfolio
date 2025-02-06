@@ -7,38 +7,33 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-
-
 @font-face {
-  font-family: 'IncognitoBold';
-  src: url('/fonts/incognito_bold.woff2') format('woff2');
+  font-family: "IncognitoBold";
+  src: url("/fonts/incognito_bold.woff2") format("woff2");
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'IncognitoCondensed';
-  src: url('/fonts/incognito_condensed.woff2') format('woff2');
-  font-weight: 100;
-  font-style: normal;
-}
-
-
-@font-face {
-  font-family: 'IncognitoRegular';
-  src: url('/fonts/incognito_regular.woff2') format('woff2');
+  font-family: "IncognitoCondensed";
+  src: url("/fonts/incognito_condensed.woff2") format("woff2");
   font-weight: 100;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'GitLabMono';
-  src: url('/fonts/gitlab-mono.woff2') format('woff2');
+  font-family: "IncognitoRegular";
+  src: url("/fonts/incognito_regular.woff2") format("woff2");
   font-weight: 100;
   font-style: normal;
 }
 
-
+@font-face {
+  font-family: "GitLabMono";
+  src: url("/fonts/gitlab-mono.woff2") format("woff2");
+  font-weight: 100;
+  font-style: normal;
+}
 
 h1 {
   font-size: 3.2em;
@@ -105,7 +100,6 @@ h1 {
   opacity: 1;
 }
 
-
 .content-all {
   display: flex;
   flex-direction: column;
@@ -130,7 +124,7 @@ h1 {
 .content h1 {
   justify-content: center;
   color: white;
-  font-family: 'IncognitoBold', sans-serif;
+  font-family: "IncognitoBold", sans-serif;
   text-align: left;
   font-size: 3.5rem;
   /* text-shadow: 0 0 5px rgba(255, 255, 255, 0.6),
@@ -143,7 +137,7 @@ h1 {
   font-size: 1.3rem;
   text-align: left;
   width: 100%;
-  font-family: 'IncognitoRegular';
+  font-family: "IncognitoRegular";
 }
 
 .all-social-links {
@@ -168,12 +162,12 @@ h1 {
   text-decoration: none;
   color: white;
   font-size: 1.5rem;
-  font-family: 'IncognitoBold', sans-serif;
+  font-family: "IncognitoBold", sans-serif;
 }
 
 .svg-animated {
   /* max-width: 450px; */
-  flex-shrink: 0; 
+  flex-shrink: 0;
   overflow: visible;
   width: 40rem;
   position: relative;
@@ -181,14 +175,10 @@ h1 {
   left: 5rem;
 }
 
-
 .svg-animated svg {
   width: 100%;
   height: auto;
 }
-
-
-
 
 @keyframes draw {
   0% {
@@ -207,25 +197,22 @@ h1 {
   animation: draw 1.5s ease-in-out infinite alternate;
 }
 
-
-
 /* Section */
 .experience-section {
   margin: 10rem 0;
   color: snow;
-  width: 90%;
+  width: 100%;
 }
 
-
 .experience-section h2 {
-  font-family: 'IncognitoBold', sans-serif;
+  font-family: "IncognitoBold", sans-serif;
 }
 
 .section-header h2 {
   font-size: 2.5rem;
   font-weight: bold;
   text-align: left;
-  margin-bottom: 20px;
+  margin-bottom: 4rem;
 }
 
 /* Grille */
@@ -237,14 +224,12 @@ h1 {
   align-items: start; /* Aligner toutes les cartes en haut */
 }
 
-
-
 /* Cartes d'expérience */
 .experience-card {
   display: flex;
   align-items: start;
   color: snow;
-  gap: 15px;
+  gap: 1.5rem;
   padding: 15px;
   position: relative;
   transform: scale(1);
@@ -253,7 +238,7 @@ h1 {
 }
 
 .experience-card:hover {
-  transform: scale(1.03); /* Légère mise en avant au survol */  
+  transform: scale(1.03); /* Légère mise en avant au survol */
 }
 
 /* Effet de ligne verticale */
@@ -261,7 +246,7 @@ h1 {
   content: "";
   position: absolute;
   left: 55px;
-  top: 9rem;
+  top: 7.8rem;
   width: 2px;
   height: 150px;
   background: #ddd;
@@ -275,15 +260,18 @@ h1 {
   justify-content: center;
   width: 65px; /* Taille fixe de l'encadré */
   height: 65px; /* Taille fixe de l'encadré */
-  padding: 6px; /* Espace à l'intérieur de l'encadré */
-  background-color: rgba(39, 39, 43, 0.4); /* Couleur de fond */
+  padding: 10px; /* Espace à l'intérieur de l'encadré */
+  background-color: snow; /* Couleur de fond */
   border-radius: 8px; /* Coins légèrement arrondis */
 }
 
 .experience-logo img {
-  width: 5rem; /* Prend toute la largeur de l'encadré */
-  height: 5rem; /* Prend toute la hauteur de l'encadré */
+  width: 6.3rem; /* Prend toute la largeur de l'encadré */
   object-fit: contain; /* Assure que le logo garde ses proportions */
+}
+
+.experience-logo .ministere-logo {
+  width: 4rem;
 }
 
 /* Contenu */
@@ -295,20 +283,23 @@ h1 {
 .experience-content h3 {
   margin: 1.5rem 0 0.5rem 0;
   font-size: 1.6rem;
-  font-family: 'IncognitoCondensed';
+  font-family: "IncognitoCondensed";
 }
 
-.experience-content p {
+.experience-content .experience-title {
   font-size: 1.1rem;
   margin: 5px 0;
+  color: #4e9b77;
 }
 
 .date {
-  font-size: 1.2rem;
-  color: rgb(113 113 122);
+  font-size: 0.9rem;
+  color: #71717a;
   text-transform: uppercase;
   margin-top: 5px;
-  font-family: 'GitLabMono';
+  /* font-family: 'GitLabMono'; */
+  letter-spacing: 0.1em;
+  margin: 0.75rem 0;
 }
 
 /*A décommenter en cas d'emploi actuel */
@@ -319,12 +310,11 @@ h1 {
 } */
 
 .description {
+  font-size: 1.1rem;
   margin-top: 10px;
-  color: rgb(161 161 170);
+  color: #71717a;
+  line-height: 1.6;
 }
-
-
-
 
 .footer {
   display: flex;
@@ -337,15 +327,7 @@ h1 {
   font-size: 1.25rem;
 }
 
-
 .footer a {
   text-align: center;
   margin: 0 auto;
 }
-
-
-
-
-
-/* ============================================================================================== */
-

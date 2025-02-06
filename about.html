@@ -1,22 +1,68 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>À Propos</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="/about.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+      </head>
+  <body>
+    <!-- NAVBAR-->
     <div class="navbar">
+      <div class="logo-left">
+        <!-- Logo gauche -->
+        <img src="logo-left.png" alt="Logo gauche" />
+      </div>
+
+      <div class="nav-links">
+        <!-- Liens de navigation -->
         <a href="index.html">Accueil</a>
         <a href="about.html">À propos</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <div class="logo-right">
+        <!-- Logo droit (logo de couleur d'écran que tu ajouteras plus tard) -->
+        <img src="logo-right.png" alt="Logo droit" />
+      </div>
     </div>
 
-    <div id="content">
-        <h1>À Propos</h1>
-        <p>Bienvenue sur ma page à propos. Voici mon parcours...</p>
+    <div id="content-all" class="content-all" data-aos="fade-up" data-aos-duration="2000">
+      <h1>À Propos</h1>
+      <p class="about-me">
+        Je suis un développeur web et étudiant en informatique, passionné par la
+        création d’applications interactives et performantes. Curieux et motivé,
+        je cherche constamment à apprendre et découvrir de nouvelles
+        technologies. Bien que je ne sois pas spécialisé dans un domaine précis,
+        j’ai une préférence pour le front-end tout en ayant des compétences
+        solides en back-end. <br><br>
+        
+        Grâce à mon cursus scolaire et mes expériences en
+        stage et en alternance, j’ai eu l’opportunité de participer à des
+        hackathons et de relever des défis techniques qui m’ont permis de
+        développer mes compétences en développement, mais aussi en gestion de
+        projet. Cet aspect me passionne particulièrement, et j’aimerais en faire
+        mon métier à long terme. <br><br>
+
+        📍 Basé en Île-de-France | 🚀 Toujours prêt pour de nouveaux défis
+      </p>
+
+
+
+
+
+
+
     </div>
 
-    <script src="main.js"></script>
-</body>
+    <div class="footer">
+      <a>Copyright © Neo Pagliara 2025 All rights Reserved</a>
+      <!-- <a>Inspired by Victor Eke</a> -->
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
 </html>

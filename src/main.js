@@ -1,7 +1,11 @@
 import './style.css'
+import './about.css'
 import javascriptLogo from './javascript.svg'
 import viteLogo from '/vite.svg'
 import { setupCounter } from './counter.js'
+
+AOS.init();
+
 
 document.addEventListener("DOMContentLoaded", function () {
     console.log("Script chargé !");
