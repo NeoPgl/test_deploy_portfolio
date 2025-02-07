@@ -92,7 +92,7 @@ h1 {
 /* Style de la navbar */
 .header {
   display: flex;
-  margin: 0 0 10rem 0;
+  margin: 0 0 8rem 0;
   padding: 1rem;
   align-items: center;
   border-bottom: solid 1px;
@@ -209,7 +209,6 @@ h1 {
 }
 
 .svg-animated {
-  /* max-width: 450px; */
   flex-shrink: 0;
   overflow: visible;
   width: 40rem;
@@ -223,21 +222,22 @@ h1 {
   height: auto;
 }
 
-@keyframes draw {
+@keyframes flow {
   0% {
-    stroke-dasharray: 0, 150;
+    stroke-dashoffset: 0;
   }
   100% {
-    stroke-dasharray: 150, 0;
+    stroke-dashoffset: -1000;
   }
 }
 
 .path {
-  stroke: #16ccae;
+  stroke: url(#paint-linear);
   stroke-width: 2;
   fill: none;
-  stroke-dasharray: 150, 0;
-  animation: draw 1.5s ease-in-out infinite alternate;
+  stroke-dasharray: 250, 30;
+  animation: flow 15s linear infinite;
+  /* animation-direction: reverse; */
 }
 
 /* Section */
