@@ -1,23 +1,31 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url("/noise.51a05f55.png");
+  background-size: 300px 300px;
+  background-color: rgb(24 24 27);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 /* Animation d'entrée (bas vers haut) */
 @keyframes fadeInUp {
   from {
-      opacity: 0;
-      transform: translateY(30px);
+    opacity: 0;
+    transform: translateY(30px);
   }
   to {
-      opacity: 1;
-      transform: translateY(0);
+    opacity: 1;
+    transform: translateY(0);
   }
 }
-
 
 /* Animation de sortie (disparition progressive) */
 @keyframes fadeOut {
   from {
-      opacity: 1;
+    opacity: 1;
   }
   to {
-      opacity: 0;
+    opacity: 0;
   }
 }
 
@@ -31,52 +39,33 @@
   animation: fadeInUp 0.5s ease-out;
 }
 
-
-
-
-
-body {
-  margin: 0;
-  padding: 0;
-  background-image: url("/noise.51a05f55.png");
-  background-size: 300px 300px;
-  background-color: rgb(24 24 27);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-
-
 @font-face {
-  font-family: 'IncognitoBold';
-  src: url('/fonts/incognito_bold.woff2') format('woff2');
+  font-family: "IncognitoBold";
+  src: url("/fonts/incognito_bold.woff2") format("woff2");
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'IncognitoCondensed';
-  src: url('/fonts/incognito_condensed.woff2') format('woff2');
-  font-weight: 100;
-  font-style: normal;
-}
-
-
-@font-face {
-  font-family: 'IncognitoRegular';
-  src: url('/fonts/incognito_regular.woff2') format('woff2');
+  font-family: "IncognitoCondensed";
+  src: url("/fonts/incognito_condensed.woff2") format("woff2");
   font-weight: 100;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'GitLabMono';
-  src: url('/fonts/gitlab-mono.woff2') format('woff2');
+  font-family: "IncognitoRegular";
+  src: url("/fonts/incognito_regular.woff2") format("woff2");
   font-weight: 100;
   font-style: normal;
 }
 
-
-
+@font-face {
+  font-family: "GitLabMono";
+  src: url("/fonts/gitlab-mono.woff2") format("woff2");
+  font-weight: 100;
+  font-style: normal;
+}
 
 /* Style de la navbar */
 .header {
@@ -112,8 +101,9 @@ body {
 .nav-links a {
   color: #fff;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 1.3rem !important;
   transition: color 0.3s;
+  font-family: "IncognitoRegular";
 }
 
 .nav-links a:hover {
@@ -132,7 +122,6 @@ body {
   opacity: 1;
 }
 
-
 .content-all {
   display: flex;
   flex-direction: column;
@@ -141,21 +130,13 @@ body {
 
 .content-all h1 {
   color: snow;
-  font-family: 'IncognitoBold';
+  font-family: "IncognitoBold";
 }
 
-.about-me{
+.about-me {
   color: snow;
   font-size: 1.5rem;
-  font-family: 'GitLabMono';
-}
-
-.content-raw {
-  display: flex;
-  justify-content: center; /* Centre le contenu horizontalement */
-  align-items: center; /* Aligne les éléments verticalement */
-  gap: 3rem; /* Espacement entre le texte et le SVG */
-  max-width: 80%;
+  font-family: "GitLabMono";
 }
 
 .content {
@@ -168,7 +149,7 @@ body {
 .content h1 {
   justify-content: center;
   color: white;
-  font-family: 'IncognitoBold', sans-serif;
+  font-family: "IncognitoBold", sans-serif;
   text-align: left;
   font-size: 3.5rem;
   /* text-shadow: 0 0 5px rgba(255, 255, 255, 0.6),
@@ -178,23 +159,263 @@ body {
 
 .content p {
   color: white;
-  font-size: 1.3rem;
   text-align: left;
   width: 100%;
-  font-family: 'IncognitoRegular';
+  letter-spacing: 0.1rem;
+  font-size: 1.5rem;
+  font-style: italic;
 }
 
 
 
+.main-raw {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .main-raw {
+    grid-template-columns: 400px 1fr;
+  }
+}
+
+.profile-image {
+  width: 100%;
+  max-width: 400px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+}
+
+.button-download-resume {
+  position: relative;
+  width: 250px; /* Augmenté de 150px */
+  height: 50px; /* Augmenté de 40px */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border: none;
+  background-color: transparent;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.button-download-resume,
+.button__icon,
+.button__text {
+  transition: all 0.3s;
+}
+
+.button-download-resume .button__text {
+  transform: translateX(35px); /* Ajusté pour le nouveau width */
+  color: #fff;
+  font-weight: 600;
+  font-size: 17px; /* Augmenté pour le plus grand bouton */
+  text-transform: uppercase;
+}
+
+.button-download-resume .button__icon {
+  position: absolute;
+  transform: translateX(202px); /* Ajusté pour le nouveau width (250px - 41px) */
+  height: 100%;
+  width: 40px;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-download-resume .svg {
+  width: 25px; /* Augmenté de 20px */
+  fill: #fff;
+}
+
+.button-download-resume:hover {
+  background: #17795e;
+}
+
+.button-download-resume:hover .button__text {
+  color: transparent;
+}
+
+.button-download-resume:hover .button__icon {
+  width: 248px; /* Ajusté pour le nouveau width */
+  transform: translateX(0);
+}
+
+.button-download-resume:active .button__icon {
+  background-color: #146c54;
+}
+
+.button-download-resume:active {
+  border: 1px solid #146c54;
+}
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background: var(--primary-color);
+  color: white;
+  flex: 1;
+}
+
+.btn-secondary {
+  background: none;
+  color: white;
+}
+
+h1 {
+  font-size: 2.5rem;
+  line-height: 1.2;
+  margin-bottom: 2rem;
+}
+
+
+.profile-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Styles pour l'animation du CV */
+.cv-container {
+  width: 400px;
+  height: 400px;
+}
+
+@keyframes write {
+  from {
+    stroke-dashoffset: 100;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.paper {
+  animation: float 3s ease-in-out infinite;
+}
+
+.text-line {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  animation: write 2s linear forwards;
+}
+
+.text-line-2 {
+  animation-delay: 0.5s;
+}
+
+.text-line-3 {
+  animation-delay: 1s;
+}
+
+.photo {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+
+
+
+
+
+
+.skills-container {
+  max-width: 800px;
+  margin: 0;
+  padding: 2rem;
+  /* font-family: system-ui, -apple-system, sans-serif; */
+}
+
+.skills-section {
+  margin-bottom: 2rem;
+  color: snow;
+}
+
+.section-title {
+  color: #2563eb;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.skills-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.skill-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem;
+  transition: transform 0.2s;
+}
+
+.skill-item:hover {
+  transform: translateX(10px);
+  color: #2563eb;
+}
+
+.skill-icon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.skill-name {
+  font-size: 1.25rem;
+}
+
+
 .footer {
   display: flex;
-  margin: 10rem auto;
+  margin: 0 auto;  /* Ajuste cette marge pour la centrer correctement */
   padding: 2rem;
   border-top: solid 1px;
   color: #fff;
-  top: 0;
   text-align: center;
   font-size: 1.25rem;
+  bottom: 0; /* Positionne-le en bas de l'écran */
+  left: 0;
+  width: 100%;
 }
 
 
@@ -202,4 +423,3 @@ body {
   text-align: center;
   margin: 0 auto;
 }
-

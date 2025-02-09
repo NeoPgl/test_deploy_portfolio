@@ -4,6 +4,7 @@ import javascriptLogo from './javascript.svg'
 import viteLogo from '/vite.svg'
 import { setupCounter } from './counter.js'
 
+
 document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelectorAll('.nav-links a');
     const contentContainer = document.getElementById('content-all') || document.querySelector('.content-all');
@@ -61,3 +62,4 @@ document.addEventListener('DOMContentLoaded', () => {
         loadPageContent(window.location.pathname);
     });
 });
+
