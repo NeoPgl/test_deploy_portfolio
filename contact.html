@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>À Propos</title>
+    <link rel="stylesheet" href="/contact.css" />
+  </head>
+  <body>
+    <!-- NAVBAR-->
+    <div class="header">
+      <div class="navbar">
+        <div class="logo-left">
+          <!-- Logo gauche -->
+          <img src="logo-left.png" alt="Logo gauche" />
+        </div>
+
+        <div class="nav-links">
+          <!-- Liens de navigation -->
+          <a href="index.html">Accueil</a>
+          <a href="about.html">À propos</a>
+          <a href="#services">Services</a>
+          <a href="#contact">Contact</a>
+        </div>
+
+        <div class="logo-right">
+          <img src="logo-right.png" alt="Logo Droit" />
+        </div>
+      </div>
+    </div>
+
+    <div id="content-all" class="content-all">
+      <div class="container">
+        <div class="heading">Contactez-moi</div>
+        <form class="form" action="" method="POST">
+            <div class="input-field">
+                <input required type="text" name="name" id="name" />
+                <label for="name">Votre Nom</label>
+            </div>
+            <div class="input-field">
+                <input required type="email" name="email" id="email" />
+                <label for="email">Votre Email</label>
+            </div>
+            <div class="input-field">
+                <textarea required name="message" id="message" rows="4"></textarea>
+                <label for="message">Votre Message</label>
+            </div>
+            <button class="btn" type="submit">Envoyer</button>
+        </form>
+    </div>
+    </div>
+
+    <div class="footer">
+      <a>Copyright © Neo Pagliara 2025 All rights Reserved</a>
+      <a>Inspired by Victor Eke</a>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

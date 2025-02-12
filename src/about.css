@@ -407,19 +407,15 @@ h1 {
 
 .footer {
   display: flex;
-  margin: 0 auto;  /* Ajuste cette marge pour la centrer correctement */
+  flex-direction: column;
+  line-height: 5rem;
+  margin: 10rem 0 0 0 !important;  /* Ajuste cette marge pour la centrer correctement */
   padding: 2rem;
-  border-top: solid 1px;
+  border-top: solid 1px grey;
   color: #fff;
   text-align: center;
   font-size: 1.25rem;
   bottom: 0; /* Positionne-le en bas de l'écran */
   left: 0;
   width: 100%;
-}
-
-
-.footer a {
-  text-align: center;
-  margin: 0 auto;
 }

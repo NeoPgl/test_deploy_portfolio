@@ -94,7 +94,7 @@ h1 {
   margin: 0 0 8rem 0;
   padding: 1rem;
   align-items: center;
-  border-bottom: solid 1px;
+  border-bottom: solid 1px grey;
   color: #fff;
 }
 
@@ -317,6 +317,27 @@ h1 {
   width: 4rem;
 }
 
+.experience-logo .cnam-logo {
+  width: 5rem;
+}
+
+.experience-logo-scolaire {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 65px; /* Taille fixe de l'encadré */
+  height: 65px; /* Taille fixe de l'encadré */
+  padding: 10px; /* Espace à l'intérieur de l'encadré */
+  background-color: snow; /* Couleur de fond */
+  border-radius: 8px; /* Coins légèrement arrondis */
+}
+
+
+.experience-logo-scolaire img {
+  width: 5rem; /* Prend toute la largeur de l'encadré */
+  object-fit: contain; /* Assure que le logo garde ses proportions */
+}
+
 /* Contenu */
 .experience-content {
   display: flex;
@@ -361,9 +382,11 @@ h1 {
 
 .footer {
   display: flex;
-  margin: 0 auto;  /* Ajuste cette marge pour la centrer correctement */
+  flex-direction: column;
+  line-height: 5rem;
+  margin: 10rem 0 0 0 !important;  /* Ajuste cette marge pour la centrer correctement */
   padding: 2rem;
-  border-top: solid 1px;
+  border-top: solid 1px grey;
   color: #fff;
   text-align: center;
   font-size: 1.25rem;
@@ -373,9 +396,5 @@ h1 {
 }
 
 
-.footer a {
-  text-align: center;
-  margin: 0 auto;
-}
 
 

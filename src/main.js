@@ -1,5 +1,6 @@
 import './style.css'
 import './about.css'
+import './contact.css'
 import javascriptLogo from './javascript.svg'
 import viteLogo from '/vite.svg'
 import { setupCounter } from './counter.js'
@@ -63,3 +64,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+document.querySelectorAll('.input-field input, .input-field textarea').forEach(input => {
+    if (input.value) {
+        input.parentElement.classList.add('has-content');
+    }
+
+    input.addEventListener('input', () => {
+        if (input.value) {
+            input.parentElement.classList.add('has-content');
+        } else {
+            input.parentElement.classList.remove('has-content');
+        }
+    });
+});
