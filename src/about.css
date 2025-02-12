@@ -5,6 +5,7 @@ body {
   background-size: 300px 300px;
   background-color: rgb(24 24 27);
   font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
 }
 
 /* Animation d'entrée (bas vers haut) */
@@ -253,7 +254,7 @@ body {
 .button-download-resume:active {
   border: 1px solid #146c54;
 }
-.btn {
+.btn-download {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -271,7 +272,7 @@ body {
   flex: 1;
 }
 
-.btn-secondary {
+.btn-secondary-download {
   background: none;
   color: white;
 }
