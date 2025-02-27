@@ -1,0 +1,251 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url("/noise.51a05f55.png");
+  background-size: 300px 300px;
+  background-color: rgb(24 24 27);
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Animation d'entrée (bas vers haut) */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animation de sortie (disparition progressive) */
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/* Classe pour cacher le contenu progressivement */
+.fade-out {
+  animation: fadeOut 0.5s forwards;
+}
+
+/* Classe pour afficher le contenu avec effet "bas vers haut" */
+.fade-in-up {
+  animation: fadeInUp 0.5s ease-out;
+}
+
+@font-face {
+  font-family: "IncognitoBold";
+  src: url("/fonts/incognito_bold.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "IncognitoCondensed";
+  src: url("/fonts/incognito_condensed.woff2") format("woff2");
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "IncognitoRegular";
+  src: url("/fonts/incognito_regular.woff2") format("woff2");
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "GitLabMono";
+  src: url("/fonts/gitlab-mono.woff2") format("woff2");
+  font-weight: 100;
+  font-style: normal;
+}
+
+/* Style de la navbar */
+.header {
+  display: flex;
+  margin: 0 0 10rem 0;
+  padding: 1rem;
+  align-items: center;
+  border-bottom: solid 1px;
+  color: #fff;
+}
+
+.navbar {
+  display: flex;
+  width: 65%;
+  margin: 0 20%;
+  padding: 2rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo à gauche */
+.logo-left img {
+  height: 40px;
+  width: auto;
+}
+
+/* Liens de navigation au centre */
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.3rem !important;
+  transition: color 0.3s;
+  font-family: "IncognitoRegular";
+}
+
+.nav-links a:hover {
+  color: #f0f0f0;
+}
+
+/* Logo à droite (tu pourras remplacer le logo par un logo avec une couleur différente d'écran) */
+.logo-right img {
+  height: 40px;
+  width: auto;
+  opacity: 0.5;
+  transition: opacity 0.3s;
+}
+
+.logo-right img:hover {
+  opacity: 1;
+}
+
+.content-all {
+  display: flex;
+  flex-direction: column;
+  margin: 0 15% 0 15%;
+}
+
+.content-all h1 {
+  color: snow;
+  font-family: "IncognitoBold";
+}
+
+
+.portfolio-section {
+  max-width: 1200px;
+  margin: 5rem auto;
+  padding: 0 1.5rem;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 4rem;
+  position: relative;
+}
+
+.section-title h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: snow;
+  border-bottom: none;
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  height: 4px;
+  width: 60px;
+  background-color: #3d5af1;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+.projects-container {
+  display: flex;
+  gap: 2.5rem;
+}
+
+.project-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  height: 160px;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.project-logo {
+  width: 30%;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f7f9ff;
+}
+
+.project-logo img {
+  max-width: 100%;
+  max-height: 80px;
+  object-fit: contain;
+}
+
+.project-content {
+  padding: 1.5rem;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.project-title {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+  color: #2d2d2d;
+  font-weight: 600;
+}
+
+.project-year {
+  color: #777;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .projects-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .section-title h2 {
+    font-size: 2rem;
+  }
+}
+
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  line-height: 5rem;
+  margin: 10rem 0 0 0 !important;  /* Ajuste cette marge pour la centrer correctement */
+  padding: 2rem;
+  border-top: solid 1px grey;
+  color: #fff;
+  text-align: center;
+  font-size: 1.25rem;
+  bottom: 0; /* Positionne-le en bas de l'écran */
+  left: 0;
+  width: 100%;
+}

@@ -1,6 +1,7 @@
 import './style.css'
 import './about.css'
 import './contact.css'
+import './projets.css'
 import javascriptLogo from './javascript.svg'
 import viteLogo from '/vite.svg'
 import { setupCounter } from './counter.js'
