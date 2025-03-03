@@ -148,7 +148,7 @@ body {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.gsb-section-title {
+.resto-section-title {
   padding: 2rem;
   margin: 2rem 0;
   background-color: #ffffff;
@@ -156,7 +156,7 @@ body {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.gsb-section-title h2 {
+.resto-section-title h2 {
   font-size: 1.8rem;
   color: #1a73e8;
   margin-bottom: 1rem;
@@ -205,7 +205,7 @@ li {
 .icone-fonctionnalite {
   font-size: 2rem;
   margin-bottom: 1rem;
-  color: #1a73e8;
+  color: #e84c1a;
 }
 
 .pile-technologique {
@@ -230,11 +230,11 @@ li {
   justify-items: center;
 }
 
-
 .etape-chronologie {
   padding: 10px 40px;
   position: relative;
   width: 50%;
+  box-sizing: border-box;
 }
 
 .contenu-chronologie {
@@ -245,7 +245,89 @@ li {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+/* Structure à deux colonnes pour le parcours utilisateur */
+.parcours-columns {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+}
 
+.parcours-column {
+  flex: 1;
+  background-color: #f8f8f8;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.parcours-column h3 {
+  color: #e84c1a;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Carte restaurant example */
+.restaurant-exemple {
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1.5rem 0;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.restaurant-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.restaurant-image {
+  width: 80px;
+  height: 80px;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1rem;
+}
+
+.restaurant-details {
+  flex: 1;
+}
+
+.restaurant-name {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 0.25rem;
+}
+
+.restaurant-rating {
+  color: #e84c1a;
+  font-size: 1.1rem;
+  margin-bottom: 0.25rem;
+}
+
+.restaurant-meta {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.restaurant-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.restaurant-tag {
+  background-color: #f0f0f0;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  color: #666;
+}
 
 .footer {
   display: flex;

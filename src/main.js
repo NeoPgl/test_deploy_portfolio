@@ -3,6 +3,8 @@ import './about.css'
 import './contact.css'
 import './projets.css'
 import './gsb.css'
+import './resto.css'
+import './steto.css'
 import javascriptLogo from './javascript.svg'
 import viteLogo from '/vite.svg'
 import { setupCounter } from './counter.js'
@@ -10,6 +12,7 @@ import { setupCounter } from './counter.js'
 
 document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelectorAll('.nav-links a');
+    const projectCards = document.querySelectorAll('.project-card');
     const contentContainer = document.getElementById('content-all') || document.querySelector('.content-all');
 
     // Fonction pour charger le contenu et appliquer l'animation
@@ -37,9 +40,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Ajouter le nouveau contenu
                 contentContainer.innerHTML = newContent.innerHTML;
 
-                // Réinitialiser l'animation et appliquer la nouvelle animation
-                contentContainer.style.animation = "fadeInUp 0.8s ease-out";
-                contentContainer.style.opacity = "1";
+                // Réinitialiser l'animation et appliquer la nouvelle animation avec un léger délai pour s'assurer que le reflow est pris en compte
+                setTimeout(() => {
+                    contentContainer.style.animation = "fadeInUp 0.8s ease-out";
+                    contentContainer.style.opacity = "1";
+                }, 10);  // Délai court pour forcer un reflow
             }
         } catch (error) {
             console.error('Erreur lors du chargement du contenu :', error);
@@ -60,11 +65,26 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Gérer les clics sur les cartes de projet
+    projectCards.forEach(card => {
+        card.addEventListener('click', async (e) => {
+            e.preventDefault();
+            const url = card.getAttribute('href'); // L'URL est maintenant sur la carte elle-même
+            
+            // Modifier l'URL sans recharger la page
+            history.pushState(null, '', url);
+            
+            // Charger le contenu de la page avec animation
+            await loadPageContent(url);
+        });
+    });
+
     // Gérer le bouton retour du navigateur
     window.addEventListener('popstate', () => {
         loadPageContent(window.location.pathname);
     });
 });
+
 
 document.querySelectorAll('.input-field input, .input-field textarea').forEach(input => {
     if (input.value) {
