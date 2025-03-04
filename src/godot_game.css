@@ -1,0 +1,342 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url("/noise.51a05f55.png");
+  background-size: 300px 300px;
+  background-color: rgb(24 24 27);
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Animation d'entrée (bas vers haut) */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animation de sortie (disparition progressive) */
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/* Classe pour cacher le contenu progressivement */
+.fade-out {
+  animation: fadeOut 0.5s forwards;
+}
+
+/* Classe pour afficher le contenu avec effet "bas vers haut" */
+.fade-in-up {
+  animation: fadeInUp 0.5s ease-out;
+}
+
+@font-face {
+  font-family: "IncognitoBold";
+  src: url("/fonts/incognito_bold.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "IncognitoCondensed";
+  src: url("/fonts/incognito_condensed.woff2") format("woff2");
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "IncognitoRegular";
+  src: url("/fonts/incognito_regular.woff2") format("woff2");
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "GitLabMono";
+  src: url("/fonts/gitlab-mono.woff2") format("woff2");
+  font-weight: 100;
+  font-style: normal;
+}
+
+/* Style de la navbar */
+.header {
+  display: flex;
+  margin: 0 0 10rem 0;
+  padding: 1rem;
+  align-items: center;
+  border-bottom: solid 1px;
+  color: #fff;
+}
+
+.navbar {
+  display: flex;
+  width: 65%;
+  margin: 0 20%;
+  padding: 2rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo à gauche */
+.logo-left img {
+  height: 40px;
+  width: auto;
+}
+
+/* Liens de navigation au centre */
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.3rem !important;
+  transition: color 0.3s;
+  font-family: "IncognitoRegular";
+}
+
+.nav-links a:hover {
+  color: #f0f0f0;
+}
+
+/* Logo à droite (tu pourras remplacer le logo par un logo avec une couleur différente d'écran) */
+.logo-right img {
+  height: 40px;
+  width: auto;
+  opacity: 0.5;
+  transition: opacity 0.3s;
+}
+
+.logo-right img:hover {
+  opacity: 1;
+}
+
+.content-all {
+  display: flex;
+  flex-direction: column;
+  margin: 0 15% 0 15%;
+}
+
+.content-all h1 {
+  color: snow;
+  font-family: "IncognitoBold";
+}
+.conteneur {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 ratio */
+  height: 0;
+  overflow: hidden;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.godot_game-section-title {
+  padding: 2rem;
+  margin: 2rem 0;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.godot_game-section-title h2 {
+  font-size: 1.8rem;
+  color: #1a73e8;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #f5f5f5;
+}
+
+h3 {
+  font-size: 1.3rem;
+  margin: 1rem 0;
+  color: #34a853;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+ul {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+.grille-fonctionnalites {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.carte-fonctionnalite {
+  background-color: #f5f5f5;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.carte-fonctionnalite:hover {
+  transform: translateY(-5px);
+}
+
+.icone-fonctionnalite {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #e84c1a;
+}
+
+.pile-technologique {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.element-tech {
+  background-color: #f5f5f5;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: 500;
+}
+
+.chronologie {
+  position: relative;
+  max-width: 1200px;
+  margin: 2rem auto;
+  text-align: center;
+  justify-items: center;
+}
+
+.etape-chronologie {
+  padding: 10px 40px;
+  position: relative;
+  width: 50%;
+  box-sizing: border-box;
+}
+
+.contenu-chronologie {
+  padding: 20px 30px;
+  background-color: #ffffff;
+  position: relative;
+  border-radius: 6px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.images-projet {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.image-container {
+  flex: 1;
+  text-align: center;
+}
+
+.placeholder-image {
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.placeholder-image:hover {
+  transform: scale(1.02);
+}
+
+.placeholder-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+.placeholder-image p {
+  margin-top: 0.5rem;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.contraintes-projet {
+  margin: 2rem 0;
+}
+
+.grille-contraintes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.carte-contrainte {
+  background-color: #f5f5f5;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.carte-contrainte:hover {
+  transform: translateY(-5px);
+}
+
+.icone-contrainte {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #e84c1a;
+  text-align: center;
+  display: block;
+}
+
+.carte-contrainte h3 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #1a73e8;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  line-height: 5rem;
+  margin: 10rem 0 0 0 !important; /* Ajuste cette marge pour la centrer correctement */
+  padding: 2rem;
+  border-top: solid 1px grey;
+  color: #fff;
+  text-align: center;
+  font-size: 1.25rem;
+  bottom: 0; /* Positionne-le en bas de l'écran */
+  left: 0;
+  width: 100%;
+}

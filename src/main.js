@@ -5,6 +5,7 @@ import './projets.css'
 import './gsb.css'
 import './resto.css'
 import './steto.css'
+import './godot_game.css'
 import javascriptLogo from './javascript.svg'
 import viteLogo from '/vite.svg'
 import { setupCounter } from './counter.js'
@@ -12,7 +13,7 @@ import { setupCounter } from './counter.js'
 
 document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelectorAll('.nav-links a');
-    const projectCards = document.querySelectorAll('.project-card');
+    const projectCards = document.querySelectorAll('.projects-container a');
     const contentContainer = document.getElementById('content-all') || document.querySelector('.content-all');
 
     // Fonction pour charger le contenu et appliquer l'animation
@@ -86,6 +87,10 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+
+
+
+// Page Contact ci dessous
 document.querySelectorAll('.input-field input, .input-field textarea').forEach(input => {
     if (input.value) {
         input.parentElement.classList.add('has-content');
