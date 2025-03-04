@@ -1,3 +1,4 @@
+/* Ajustez les couleurs pour le mode clair et sombre */
 body {
   margin: 0;
   padding: 0;
@@ -6,20 +7,81 @@ body {
   background-color: rgb(24 24 27);
   font-family: Arial, Helvetica, sans-serif;
   overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  /* color: white !important; */
+}
+
+.light-mode {
+  background-color: snow;
+  color: black !important;
+}
+
+.light-mode .header {
+  border-bottom: solid 1px lightgrey;
+}
+
+.light-mode .nav-links a {
+  color: black;
+}
+
+.light-mode .content h1 {
+  color: black;
+}
+
+.light-mode .content p {
+  color: black !important;
+}
+
+.light-mode .experience-section {
+  color: black;
+}
+
+.light-mode .experience-content h3 {
+  color: black;
+}
+
+.light-mode .skill-item span {
+  color: black;
+}
+
+.light-mode .button-download-resume span {
+  color: black;
+}
+
+.light-mode .button-download-resume svg {
+  fill: black;
+}
+
+.light-mode .footer {
+  color: black;
+  border-top: solid 1px lightgrey;
 }
 
 
-/* Animation d'entrée (bas vers haut) */
-@keyframes fadeInUp {
-  from {
-      opacity: 0;
-      transform: translateY(30px);
+@keyframes draw {
+  0% {
+    stroke-dashoffset: var(--dash-length);
   }
-  to {
-      opacity: 1;
-      transform: translateY(0);
+  100% {
+    stroke-dashoffset: 0;
   }
 }
+
+/* Appliquer l'animation de dessin */
+.animated-path {
+  stroke: white;
+  stroke-width: 2;
+  fill: none;
+  stroke-dasharray: var(--dash-length);
+  stroke-dashoffset: var(--dash-length);
+  animation: draw 1.2s ease-in-out forwards;
+}
+
+/* Mode clair : couleur noire pour le dessin */
+.light-mode .animated-path {
+  stroke: black;
+}
+
 
 
 /* Animation de sortie (disparition progressive) */
@@ -76,18 +138,6 @@ h1 {
   line-height: 1.1;
 }
 
-/* .logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vanilla:hover {
-  filter: drop-shadow(0 0 2em #f7df1eaa);
-} */
 
 /* Style de la navbar */
 .header {
@@ -135,7 +185,17 @@ h1 {
 
 .logo-right {
   width: 50px;
+  cursor: pointer;
+  outline: none;
 }
+
+svg {
+  outline: none;
+}
+svg:focus {
+  outline: none;
+}
+
 
 /* Logo à droite (tu pourras remplacer le logo par un logo avec une couleur différente d'écran) */
 .logo-right img {
