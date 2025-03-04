@@ -101,8 +101,9 @@ h1 {
 
 .navbar {
   display: flex;
-  width: 65%;
-  margin: 0 20%;
+  width: 100%;
+  max-width: 1200px; /* Largeur max pour éviter l'étalement */
+  margin: 0 auto !important;
   padding: 2rem;
   justify-content: space-between;
   align-items: center;
@@ -110,7 +111,7 @@ h1 {
 
 /* Logo à gauche */
 .logo-left img {
-  height: 40px;
+  height: 70px !important;
   width: auto;
 }
 
@@ -130,6 +131,10 @@ h1 {
 
 .nav-links a:hover {
   color: #61bd92 !important;
+}
+
+.logo-right {
+  width: 50px;
 }
 
 /* Logo à droite (tu pourras remplacer le logo par un logo avec une couleur différente d'écran) */
