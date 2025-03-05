@@ -127,8 +127,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Toggle logo
         logoImage.src = isDarkMode 
-            ? "/logo_principal.svg" 
-            : "/logo_principal-modified.svg";
+            ? "public/logo_principal.svg" 
+            : "public/logo_principal-modified.svg";
 
         // Reset and animate icon
         iconPath.style.animation = "none";
@@ -151,7 +151,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'light') {
         body.classList.add('light-mode');
-        logoImage.src = "/logo_principal-modified.svg";
+        logoImage.src = "public/logo_principal-modified.svg";
         isDarkMode = false;
     }
 });
