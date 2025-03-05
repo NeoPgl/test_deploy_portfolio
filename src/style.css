@@ -205,28 +205,28 @@ body {
 
 @font-face {
   font-family: "IncognitoBold";
-  src: url("/fonts/incognito_bold.woff2") format("woff2");
+  src: url("fonts/incognito_bold.woff2") format("woff2");
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
   font-family: "IncognitoCondensed";
-  src: url("/fonts/incognito_condensed.woff2") format("woff2");
+  src: url("fonts/incognito_condensed.woff2") format("woff2");
   font-weight: 100;
   font-style: normal;
 }
 
 @font-face {
   font-family: "IncognitoRegular";
-  src: url("/fonts/incognito_regular.woff2") format("woff2");
+  src: url("fonts/incognito_regular.woff2") format("woff2");
   font-weight: 100;
   font-style: normal;
 }
 
 @font-face {
   font-family: "GitLabMono";
-  src: url("/fonts/gitlab-mono.woff2") format("woff2");
+  src: url("fonts/gitlab-mono.woff2") format("woff2");
   font-weight: 100;
   font-style: normal;
 }
