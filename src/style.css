@@ -32,6 +32,14 @@ body {
   color: black !important;
 }
 
+.light-mode .social-links a {
+  color: black;
+}
+
+.light-mode .social-links svg {
+  fill: black;
+}
+
 .light-mode .experience-section {
   color: black;
 }
@@ -50,6 +58,96 @@ body {
 
 .light-mode .button-download-resume svg {
   fill: black;
+}
+
+.light-mode .project-title h2 {
+  color: black;
+}
+
+
+
+/* Dark Mode (Default) */
+.container {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 3rem;
+  position: relative;
+  border-radius: 24px;
+  box-sizing: border-box;
+  transform: translateY(30px);
+  opacity: 0;
+  animation: slideUp 0.6s ease forwards;
+  background: rgba(24, 24, 27, 0.9);
+  backdrop-filter: blur(10px);
+  overflow: hidden;
+}
+
+/* Light Mode Specific Styles */
+.light-mode .container {
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.light-mode .container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(100, 120, 255, 0.2),
+      rgba(168, 184, 255, 0.2),
+      transparent
+  );
+  animation: lightFlow 4s linear infinite;
+  filter: blur(5px);
+}
+
+@keyframes lightFlow {
+  0% {
+      transform: translateX(-100%) skewX(-15deg);
+  }
+  100% {
+      transform: translateX(100%) skewX(-15deg);
+  }
+}
+
+.light-mode .container::after {
+  background: rgba(255, 255, 255, 0.97);
+}
+
+/* Input Fields - Light Mode */
+.light-mode .input-field input,
+.light-mode .input-field textarea {
+  background: rgba(240, 240, 255, 0.5);
+  border: 1px solid rgba(100, 120, 255, 0.2);
+  color: #1a1a2e;
+}
+
+.light-mode .input-field label {
+  color: rgba(26, 26, 46, 0.6);
+}
+
+.light-mode .input-field input:focus,
+.light-mode .input-field textarea:focus {
+  border-color: #6478ff;
+  background: rgba(100, 120, 255, 0.1);
+}
+
+/* Heading - Light Mode */
+.light-mode .heading {
+  background: linear-gradient(135deg, #6478ff, #a8b8ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.light-mode .soon-title {
+  color: black;
 }
 
 .light-mode .footer {
@@ -142,10 +240,10 @@ h1 {
 /* Style de la navbar */
 .header {
   display: flex;
-  margin: 0 0 8rem 0;
+  margin: 0 0 10rem 0 !important;
   padding: 1rem;
   align-items: center;
-  border-bottom: solid 1px grey;
+  border-bottom: solid 1px #3a3a3a;
   color: #fff;
 }
 
@@ -453,7 +551,7 @@ svg:focus {
   line-height: 5rem;
   margin: 10rem 0 0 0 !important;  /* Ajuste cette marge pour la centrer correctement */
   padding: 2rem;
-  border-top: solid 1px grey;
+  border-top: solid 1px #3a3a3a;
   color: #fff;
   text-align: center;
   font-size: 1.25rem;

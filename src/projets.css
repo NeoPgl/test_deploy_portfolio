@@ -74,7 +74,7 @@ body {
   margin: 0 0 10rem 0;
   padding: 1rem;
   align-items: center;
-  border-bottom: solid 1px;
+  border-bottom: solid 1px #3a3a3a;
   color: #fff;
 }
 
@@ -242,7 +242,7 @@ body {
   line-height: 5rem;
   margin: 10rem 0 0 0 !important; /* Ajuste cette marge pour la centrer correctement */
   padding: 2rem;
-  border-top: solid 1px grey;
+  border-top: solid 1px #3a3a3a;
   color: #fff;
   text-align: center;
   font-size: 1.25rem;

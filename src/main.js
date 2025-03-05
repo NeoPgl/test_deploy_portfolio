@@ -108,11 +108,11 @@ document.querySelectorAll('.input-field input, .input-field textarea').forEach(i
 
 // Switch Mode Dark & Light
 
-
 document.addEventListener("DOMContentLoaded", function () {
     const toggleButton = document.getElementById("themeToggle");
     const iconPath = toggleButton.querySelector("path");
     const body = document.body;
+    const logoImage = document.querySelector(".logo-left img");
     let isDarkMode = true;
 
     const sunPath = "M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z";
@@ -122,21 +122,36 @@ document.addEventListener("DOMContentLoaded", function () {
         body.classList.toggle("light-mode");
         isDarkMode = !isDarkMode;
 
-        // Réinitialiser l'animation
+        // Save theme preference
+        localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+
+        // Toggle logo
+        logoImage.src = isDarkMode 
+            ? "/logo_principal.svg" 
+            : "/logo_principal-modified.svg";
+
+        // Reset and animate icon
         iconPath.style.animation = "none";
         setTimeout(() => {
-            // Changer l'icône
+            // Change icon
             iconPath.setAttribute("d", isDarkMode ? sunPath : moonPath);
 
-            // Calculer la longueur du chemin et appliquer
+            // Calculate path length and apply
             let pathLength = iconPath.getTotalLength();
             iconPath.style.setProperty("--dash-length", pathLength);
-            
-            // Relancer l'animation
+
+            // Restart animation
             iconPath.style.animation = "draw 1.2s ease-in-out forwards";
         }, 50);
     }
 
     toggleButton.addEventListener("click", toggleTheme);
-});
 
+    // Load saved theme preference
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'light') {
+        body.classList.add('light-mode');
+        logoImage.src = "/logo_principal-modified.svg";
+        isDarkMode = false;
+    }
+});
