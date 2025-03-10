@@ -1,14 +1,14 @@
-import 'src/style.css'
-import 'src/about.css'
-import 'src/contact.css'
-import 'src/projets.css'
-import 'src/gsb.css'
-import 'src/resto.css'
-import 'src/steto.css'
-import 'src/godot_game.css'
+import './style.css'
+import './about.css'
+import './contact.css'
+import './projets.css'
+import './gsb.css'
+import './resto.css'
+import './steto.css'
+import './godot_game.css'
 import javascriptLogo from './javascript.svg'
 import viteLogo from '/vite.svg'
-import { setupCounter } from 'src/counter.js'
+import { setupCounter } from './counter.js'
 
 
 document.addEventListener('DOMContentLoaded', () => {
