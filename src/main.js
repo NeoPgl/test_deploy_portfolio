@@ -135,6 +135,7 @@ document.addEventListener("DOMContentLoaded", function () {
             // Restart animation
             iconPath.style.animation = "draw 1.2s ease-in-out forwards";
         }, 50);
+        console.log('test')
     }
 
     toggleButton.addEventListener("click", toggleTheme);
