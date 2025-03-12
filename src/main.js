@@ -1,6 +1,6 @@
 // import javascriptLogo from './javascript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.js'
+// import viteLogo from '/vite.svg'
+// import { setupCounter } from './counter.js'
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -135,7 +135,6 @@ document.addEventListener("DOMContentLoaded", function () {
             // Restart animation
             iconPath.style.animation = "draw 1.2s ease-in-out forwards";
         }, 50);
-        console.log('test')
     }
 
     toggleButton.addEventListener("click", toggleTheme);
